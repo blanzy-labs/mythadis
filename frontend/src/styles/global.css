@@ -137,6 +137,11 @@ h2 {
   gap: 1rem;
 }
 
+.result-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .status-row {
   align-items: stretch;
   display: grid;

@@ -1,4 +1,5 @@
 import type { ConsensusResponse } from "../types/consensus";
+import ExportButton from "./ExportButton";
 
 type ResultPanelProps = {
   result: ConsensusResponse | null;
@@ -11,6 +12,10 @@ function ResultPanel({ result }: ResultPanelProps) {
 
   return (
     <section className="result-stack" aria-label="Consensus result">
+      <div className="result-actions">
+        <ExportButton result={result} />
+      </div>
+
       <article className="panel final-answer">
         <p className="panel-kicker">Final Consensus Answer</p>
         <h2>{result.question}</h2>

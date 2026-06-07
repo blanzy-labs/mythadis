@@ -10,6 +10,8 @@ Prompt templates are also sent to the configured providers with the user's quest
 
 The frontend sends only the user's question and selected provider names to the local backend. API keys must not be placed in frontend environment variables. Results are rendered in the browser but are not stored by the app in V1.
 
+Markdown export happens locally in the browser from the result currently displayed on screen. The user controls the saved `.md` file. Mythadis Consensus Engine does not store exported reports, maintain export history, or upload exported reports to the backend.
+
 No prompt storage or result storage is implemented in V1. No login, authentication, database, prompt history, or saved results are implemented in V1.
 
 Provider errors returned by the API must be safe and must not include API keys, request headers, raw secret environment values, or provider stack traces.

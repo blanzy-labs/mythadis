@@ -4,14 +4,27 @@ import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 import App from "./App";
 import { checkHealth, runConsensus } from "./api/client";
 import type { ConsensusResponse } from "./types/consensus";
+import { downloadMarkdown } from "./utils/markdownExport";
 
 vi.mock("./api/client", () => ({
   checkHealth: vi.fn(),
   runConsensus: vi.fn(),
 }));
 
+vi.mock("./utils/markdownExport", async () => {
+  const actual = await vi.importActual<typeof import("./utils/markdownExport")>(
+    "./utils/markdownExport",
+  );
+
+  return {
+    ...actual,
+    downloadMarkdown: vi.fn(),
+  };
+});
+
 const mockedCheckHealth = vi.mocked(checkHealth);
 const mockedRunConsensus = vi.mocked(runConsensus);
+const mockedDownloadMarkdown = vi.mocked(downloadMarkdown);
 
 const successfulResponse: ConsensusResponse = {
   question: "What are the risks of relying on one AI answer?",
@@ -40,6 +53,7 @@ describe("App", () => {
       service: "mythadis-consensus-engine-backend",
     });
     mockedRunConsensus.mockReset();
+    mockedDownloadMarkdown.mockReset();
   });
 
   test("renders title and tagline", () => {
@@ -102,6 +116,31 @@ describe("App", () => {
     expect(screen.getByText("Primary answer")).toBeInTheDocument();
     expect(screen.getByText("Reviewer critique")).toBeInTheDocument();
     expect(screen.getAllByText("gpt-test")).toHaveLength(2);
+    expect(screen.getByRole("button", { name: "Export Markdown" })).toBeInTheDocument();
+  });
+
+  test("does not show export button before a result exists", () => {
+    render(<App />);
+
+    expect(screen.queryByRole("button", { name: "Export Markdown" })).not.toBeInTheDocument();
+  });
+
+  test("clicking export downloads markdown after a result exists", async () => {
+    mockedRunConsensus.mockResolvedValue(successfulResponse);
+    render(<App />);
+
+    fireEvent.change(screen.getByLabelText("Question"), {
+      target: { value: "What are the risks of relying on one AI answer?" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: "Run consensus" }));
+
+    fireEvent.click(await screen.findByRole("button", { name: "Export Markdown" }));
+
+    expect(mockedDownloadMarkdown).toHaveBeenCalledTimes(1);
+    expect(mockedDownloadMarkdown.mock.calls[0][0]).toMatch(
+      /^mythadis-consensus-report-\d{8}-\d{6}\.md$/,
+    );
+    expect(mockedDownloadMarkdown.mock.calls[0][1]).toContain("# Mythadis Consensus Report");
   });
 
   test("renders backend error message", async () => {
