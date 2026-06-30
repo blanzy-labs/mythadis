@@ -52,9 +52,11 @@ In short: no prompt storage or result storage is implemented in V1.
 
 ## Export Behavior
 
+This page is retained as detailed security notes. The standard security and privacy entry point is [docs/security-and-privacy.md](security-and-privacy.md).
+
 Markdown export is generated locally in the browser from the result currently displayed on screen. The user controls the downloaded report.
 
-Mythadis Consensus Engine does not store exported reports, maintain export history, or upload exported reports to the backend.
+AI Consensus Engine does not store exported reports, maintain export history, or upload exported reports to the backend.
 
 Exported reports should be reviewed before sharing or relying on them.
 
@@ -95,10 +97,12 @@ Do not commit lockfiles with suspicious or unexplained dependency changes. Pin o
 
 ## Limitations
 
-Mythadis Consensus Engine is not a private or offline LLM system. It sends user questions, prompts, and generated answers to the configured providers for each run.
+AI Consensus Engine is not a private or offline LLM system. It sends user questions, prompts, and generated answers to the configured providers for each run.
 
 The app does not browse the web or perform hidden external research in V1.
 
 Consensus does not guarantee truth. Outputs may contain errors, omissions, or outdated information.
 
 Do not use the app as the sole authority for safety-critical, medical, legal, or financial decisions.
+
+See [docs/disclaimer.md](disclaimer.md) for the full project disclaimer.

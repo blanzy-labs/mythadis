@@ -95,9 +95,9 @@ function App() {
   return (
     <main className="app-shell">
       <section className="intro" aria-labelledby="app-title">
-        <p className="eyebrow">Mythadis Labs</p>
-        <h1 id="app-title">Mythadis Consensus Engine</h1>
-        <p className="tagline">The books are fiction. The questions are real.</p>
+        <p className="eyebrow">Blanzy Labs</p>
+        <h1 id="app-title">AI Consensus Engine</h1>
+        <p className="tagline">Compare answers. Surface uncertainty. Decide what to verify.</p>
         <p className="intro-copy">
           Ask a question. One AI answers, another reviews, and a final synthesis
           highlights agreement, disagreement, and uncertainty.

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Mythadis Consensus Engine is a lightweight, local-first, open-source consensus tool. It lets a user ask a question, route that question through multiple AI providers, and receive a structured result that highlights agreement, disagreement, uncertainty, and follow-up questions.
+AI Consensus Engine is a lightweight, local-first Blanzy Labs AI app. It lets a user ask a question, route that question through multiple AI providers, and receive a structured result that highlights agreement, disagreement, uncertainty, and follow-up questions.
 
 The app is intentionally small: no login, no database, no prompt history, no server-side result storage, no telemetry, and no analytics.
 

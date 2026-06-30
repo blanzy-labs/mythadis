@@ -25,7 +25,7 @@ describe("markdown export", () => {
   test("builds a complete consensus report", () => {
     const markdown = buildConsensusMarkdown(result, generatedAt);
 
-    expect(markdown).toContain("# Mythadis Consensus Report");
+    expect(markdown).toContain("# AI Consensus Engine Report");
     expect(markdown).toContain("Generated At:");
     expect(markdown).toContain("## Question");
     expect(markdown).toContain(result.question);
@@ -69,7 +69,7 @@ describe("markdown export", () => {
 
   test("builds a safe timestamped filename", () => {
     expect(buildMarkdownFilename(generatedAt)).toBe(
-      "mythadis-consensus-report-20260607-140509.md",
+      "ai-consensus-report-20260607-140509.md",
     );
   });
 

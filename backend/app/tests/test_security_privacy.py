@@ -19,7 +19,7 @@ DATABASE_DEPENDENCIES = (
 def test_env_example_uses_safe_placeholders_and_current_gemini_default() -> None:
     env_example = (REPO_ROOT / ".env.example").read_text()
 
-    assert 'APP_NAME="Mythadis Consensus Engine"' in env_example
+    assert 'APP_NAME="AI Consensus Engine"' in env_example
     assert "OPENAI_API_KEY=\n" in env_example
     assert "GEMINI_API_KEY=\n" in env_example
     assert "OPENAI_MODEL=gpt-4.1-mini" in env_example

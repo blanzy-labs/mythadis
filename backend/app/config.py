@@ -4,7 +4,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    app_name: str = "Mythadis Consensus Engine"
+    app_name: str = "AI Consensus Engine"
     app_env: str = "development"
     backend_host: str = "0.0.0.0"
     backend_port: int = 8000

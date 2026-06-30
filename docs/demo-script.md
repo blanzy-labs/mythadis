@@ -15,7 +15,7 @@ Audience: readers, general audience, non-technical followers.
 ### Flow
 
 1. Introduce the problem: one AI answer can sound confident.
-2. Introduce Mythadis Consensus Engine.
+2. Introduce AI Consensus Engine.
 3. Show one question.
 4. Show primary answer, reviewer critique, and final synthesis.
 5. Show uncertainty and follow-up questions.
@@ -26,7 +26,7 @@ Audience: readers, general audience, non-technical followers.
 
 > One AI answer can sound confident, even when it is incomplete or wrong.
 >
-> Mythadis Consensus Engine is a small open-source experiment from Mythadis Labs. You ask a question, one AI answers, another reviews that answer, and a final synthesis highlights agreement, disagreement, and uncertainty.
+> AI Consensus Engine is a small local-first app from Blanzy Labs. You ask a question, one AI answers, another reviews that answer, and a final synthesis highlights agreement, disagreement, and uncertainty.
 >
 > For this demo, I will ask: "What are the risks of relying on a single AI answer?"
 >
@@ -68,7 +68,7 @@ Audience: developers, LinkedIn tech people, GitHub visitors.
 
 ### Spoken Script Draft
 
-> Mythadis Consensus Engine is a local-first open-source consensus tool. It is designed around a simple idea: instead of treating one model answer as final, route the answer through a reviewer and a synthesizer.
+> AI Consensus Engine is a local-first consensus tool from Blanzy Labs. It is designed around a simple idea: instead of treating one model answer as final, route the answer through a reviewer and a synthesizer.
 >
 > The architecture is intentionally small. The React/Vite frontend talks only to the FastAPI backend. The backend owns provider calls, prompt construction, and safe error handling. The frontend never receives OpenAI or Gemini API keys.
 >

@@ -2,7 +2,7 @@
 
 ## Welcome
 
-Thanks for your interest in Mythadis Consensus Engine. This project is a small, local-first open-source consensus tool from Mythadis Labs.
+Thanks for your interest in AI Consensus Engine. This project is a small, local-first AI app from Blanzy Labs.
 
 The V1 scope is intentionally narrow: no login, no database, no prompt/result history, no server-side storage, no telemetry, no analytics, no streaming, and no share links.
 

@@ -1,6 +1,6 @@
-# Mythadis Consensus Engine: Quick Troubleshooting Guide
+# AI Consensus Engine: Quick Troubleshooting Guide
 
-This guide covers common issues people may run into when installing or running Mythadis Consensus Engine locally.
+This guide covers common issues people may run into when installing or running AI Consensus Engine locally.
 
 ## 1. Docker is not installed
 
@@ -106,8 +106,8 @@ cp .env.example .env
 Then edit `.env` and add your provider keys:
 
 ```env
-OPENAI_API_KEY=your_openai_key_here
-GEMINI_API_KEY=your_gemini_key_here
+OPENAI_API_KEY=<your-openai-key>
+GEMINI_API_KEY=<your-gemini-key>
 ```
 
 Do not commit `.env` to GitHub.
@@ -324,4 +324,3 @@ http://localhost:5173
 # Security Reminder
 
 Never share or commit your `.env` file. Your OpenAI and Gemini API keys should remain local to your machine.
-

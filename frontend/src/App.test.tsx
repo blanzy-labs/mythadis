@@ -59,8 +59,10 @@ describe("App", () => {
   test("renders title and tagline", () => {
     render(<App />);
 
-    expect(screen.getByRole("heading", { name: "Mythadis Consensus Engine" })).toBeInTheDocument();
-    expect(screen.getByText("The books are fiction. The questions are real.")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "AI Consensus Engine" })).toBeInTheDocument();
+    expect(
+      screen.getByText("Compare answers. Surface uncertainty. Decide what to verify."),
+    ).toBeInTheDocument();
   });
 
   test("rejects an empty question", () => {
@@ -138,9 +140,9 @@ describe("App", () => {
 
     expect(mockedDownloadMarkdown).toHaveBeenCalledTimes(1);
     expect(mockedDownloadMarkdown.mock.calls[0][0]).toMatch(
-      /^mythadis-consensus-report-\d{8}-\d{6}\.md$/,
+      /^ai-consensus-report-\d{8}-\d{6}\.md$/,
     );
-    expect(mockedDownloadMarkdown.mock.calls[0][1]).toContain("# Mythadis Consensus Report");
+    expect(mockedDownloadMarkdown.mock.calls[0][1]).toContain("# AI Consensus Engine Report");
   });
 
   test("renders backend error message", async () => {

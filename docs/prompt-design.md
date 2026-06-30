@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Mythadis Consensus Engine uses a three-stage prompt flow:
+AI Consensus Engine uses a three-stage prompt flow:
 
 ```text
 Primary answer -> Reviewer critique -> Final synthesis
@@ -26,7 +26,7 @@ The primary prompt asks the selected model to answer the user's question directl
 
 The primary stage does not require JSON. Plain text is used so the model can focus on producing a useful answer rather than satisfying a response schema too early.
 
-The prompt also warns the model not to invent citations, sources, data, quotes, or research. Mythadis Consensus Engine does not browse the web in V1, so the prompt tells the model to say when current or external verification would be needed.
+The prompt also warns the model not to invent citations, sources, data, quotes, or research. AI Consensus Engine does not browse the web in V1, so the prompt tells the model to say when current or external verification would be needed.
 
 ## Stage 2: Reviewer Critique
 
@@ -81,7 +81,7 @@ This fallback is error handling, not a mock AI response.
 The prompts include safety and limitation guidance:
 
 - Consensus does not equal truth.
-- Mythadis Consensus Engine does not browse the web in V1.
+- AI Consensus Engine does not browse the web in V1.
 - Models can still hallucinate.
 - Current facts may require external verification.
 - Models should not pretend to have performed external research.

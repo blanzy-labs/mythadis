@@ -4,7 +4,7 @@ from app.config import Settings
 def test_config_loads_defaults_without_api_keys() -> None:
     settings = Settings(_env_file=None)
 
-    assert settings.app_name == "Mythadis Consensus Engine"
+    assert settings.app_name == "AI Consensus Engine"
     assert settings.app_env == "development"
     assert settings.backend_host == "0.0.0.0"
     assert settings.backend_port == 8000
